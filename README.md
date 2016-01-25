@@ -1,10 +1,12 @@
 # Twitter API
 
 ## Objectives
++ Use Ajax to make a `get` request to an API
++ Use Ajax to make a `post` request to an API
++ Parse JSON to get clean API data
 
 ## Intro
 use twitter API to make GET and POST requests to create tweets, view tweets
-
 
 
 ## Instructions
