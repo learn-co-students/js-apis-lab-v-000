@@ -20,3 +20,4 @@ build methods `myTweets();` return current user's 5 most recent tweets
 build a frontend with 3 forms to trigger API calls to display data in the browser
 
 needs tests
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-lab' title='Twitter API'>Twitter API</a> on Learn.co and start learning to code for free.</p>
