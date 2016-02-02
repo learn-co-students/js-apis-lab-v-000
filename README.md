@@ -1,4 +1,4 @@
-# Twitter API
+# GitHub API
 
 ## Objectives
 + Use Ajax to make a `get` request to an API
@@ -6,18 +6,23 @@
 + Parse JSON to get clean API data
 
 ## Intro
-use twitter API to make GET and POST requests to create tweets, view tweets
-
+For this lab we will be using the GitHub API to create and view Gists. In this lab you will create a UI that allows users to see a list of their gists and be able to create new ones.
 
 ## Instructions
+You will need to visit https://github.com/settings/tokens and create a personal token to use. This token allows you to make request data for your account.
 
-build methods `myTweets();` return current user's 5 most recent tweets
+- Create the method `myGists(username, token)` that returns the gists for a user.
+- Create the method `createGist(file_name, content, description, token)` that creates a public gist.
 
-`createTweet("tweet content")` to send a tweet
-
-`viewTweets("username")` to view a specific user's tweets
-
-build a frontend with 3 forms to trigger API calls to display data in the browser
-
-needs tests
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-apis-lab' title='Twitter API'>Twitter API</a> on Learn.co and start learning to code for free.</p>
+### User Interface
+With your code ready to go, create the UI.
+- Create a form for the user to enter
+  - Personal token.
+  - Gist file name.
+  - Gist description.
+  - Gist contents.
+- Have a button that when clicked
+  - Creates a public gist for a user.
+  - Updates the UI to show the list of public gists for the user.
+    - Use the `html_url` for the href and the description from the gist
+      as the link text.
