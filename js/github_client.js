@@ -58,5 +58,3 @@ var bindCreateButton = function() {
 $(document).ready(function(){
   bindCreateButton();
 });
-
-
