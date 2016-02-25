@@ -13,6 +13,7 @@ var createGist = function(file_name, content, description, token){
   $.ajax({
     url: 'https://api.github.com/gists',
     type: 'POST',
+    dataType: 'json',
     beforeSend: function(xhr) {
       xhr.setRequestHeader("Authorization", "token " + token);
     },
