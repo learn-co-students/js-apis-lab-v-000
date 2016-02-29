@@ -3,6 +3,34 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <h2>Github Gists</h2>
+
+  <h2>Authentication</h2>
+  <p>
+    <label for="token">Token:</label>
+    <input id="token" type="text">
+  </p>
+
+  <h2>Create Gist</h2>
+  <p>
+    <label for="token">File Name:</label>
+    <input id="file_name" type="text">
+  </p>
+
+  <p>
+    <label for="token">Description:</label>
+    <textarea name="" id="description" cols="30" rows="3"></textarea>
+  </p>
+
+  <p>
+    <label for="token">Contents:</label>
+    <textarea name="" id="content" cols="30" rows="3"></textarea>
+  </p>
+
+  <input type="submit" id="create_button">
+
+  <ul id="myGist">
+  </ul>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
