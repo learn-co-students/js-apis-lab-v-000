@@ -3,7 +3,32 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <form action="POST">
+    <div>
+      <label for="token">Token: </label>
+      <input type="text" id="token">
+    </div>
+    <div>
+      <label for="title">Gist Name: </label>
+      <input type="text" id="title">
+    </div>
+    <div>
+      <label for="description">Gist Description: </label>
+      <input type="text" id="description">
+    </div>
+    <div>
+      <label for="content">Gist Content:</label>
+      <input type="text" id="content">
+    </div>
+    <div>
+      <input type="button" id="create_gist" value="Create Gist">
+    </div>
 
+    <br>
+    <h2>My Gists</h2>
+    <ul id="myGists">
+    </ul>
+  </form>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
