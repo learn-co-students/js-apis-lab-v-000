@@ -32,20 +32,19 @@ With your code ready to go, create the UI.
 ### Hint
 The GitHub API requires you to send a token as part of the request
 headers. This token will be the personal token you created in the
-beginning of the lab. In order to set the headers you will need to
-provide a function to the `beforeSend` option of the `$.ajax` request.
-This function accepts a parameter of type [jqXHR](http://api.jquery.com/Types/#jqXHR) which we then call `setRequestHeader` to set the `Authorization` header. Below is an example of this configuration.
+beginning of the lab. To set the headers, you can pass the options
+that you need to the [`headers`](http://api.jquery.com/jquery.ajax/) field in
+your request options. An example is below:
 
-```javascript
-  $.ajax({
-    url: 'GitHub URL HERE',
-    type: 'POST',
-    dataType: 'json',
-    beforeSend: function(xhr) {
-      xhr.setRequestHeader("Authorization", "token PERSON-TOKEN-HERE");
-    },
-    ....
-  });
+``` javascript
+$.ajax({
+  url: 'GITHUB_URL_HERE',
+  type: 'POST',
+  dataType: 'json',
+  headers: {
+    Authorization: "token YOUR_TOKEN_HERE"
+  }
+})
 ```
 
 ## References
