@@ -3,6 +3,18 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <form id="create_gist" action="index.html" method="post">
+    <input id="username" type="text" name="username" placeholder="Github username"><br>
+    <input id="token" type="password" name="token" placeholder="Personal token"><br>
+    <input id="file_name" type="text" name="file_name" placeholder="File name"><br>
+    <input id="description" type="text" name="description" placeholder="Description"><br>
+    <input id="content" type="text" name="content" placeholder="Content"><br>
+    <input id="submit" type="submit" name="submit" value="Create Gist!">
+  </form>
+
+  <div class="gists">
+
+  </div>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
