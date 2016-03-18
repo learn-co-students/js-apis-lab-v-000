@@ -1,5 +1,3 @@
-var token = '35c1c56f5cf789654e09a575a3fd757517aba292';
-
 
 //define functions here
 var createGist = function(file_name, content, description, token){
