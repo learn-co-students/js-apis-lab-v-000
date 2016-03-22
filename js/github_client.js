@@ -59,4 +59,3 @@ $(document).ready(function(){
 
   bindCreateButton();
 });
-   // Authorization: "2cf42b54bbfb9c67ac9306d1862a499a46f1efad"
