@@ -3,6 +3,32 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	<div id='gist_form'>
+		<div>
+			<label for="username">User Name: </label><input type="text" id="username">
+		</div>
+		<div>
+			<label for="token" >Token: </label><input type="text" id="token">
+		</div>
+		<div>
+			<label for="file_name" >File name: </label><input type="text" id="file_name">
+		</div>
+		<div>
+			<label for="description" >Description: </label><br>
+			<textarea type="text" id="description"></textarea>
+		</div>
+		<div>
+			<label for="content" >Content: </label><br>
+			<textarea type="text" id="content"></textarea>
+		</div>
+		<div>
+			<input type="button" id="button" value="submit" >
+		</div>
+	</div>
+
+	<div id="display">
+
+	</div>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
