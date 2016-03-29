@@ -49,6 +49,3 @@ var bindCreateButton = function() {
 $(document).ready(function(){
   bindCreateButton();
 });
-
-
-var token = "fdd3e658c926d5ce7485f4d0d81f50a3e7ee503a";
