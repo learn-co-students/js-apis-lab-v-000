@@ -3,6 +3,15 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <div id="create_gist">
+    <label>Personal token: <input id= "token"/></label><br>
+    <label>Gist file name: <input id= "file_name"/></label><br>
+    <label>Gist description: <input id= "description"/></label><br>
+    <label>Gist contents: <input id= "content"/></label><br>
+    <button id="submit">Submit</button>
+  </div>
+
+  <div id="gist_list"></div>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
