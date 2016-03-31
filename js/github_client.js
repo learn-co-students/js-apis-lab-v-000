@@ -1,49 +1,48 @@
 //define functions here
 var createGist = function(file_name, content, description, token){
-  var gistData = {"public": true,
-                  "description": description,
-                  "files": {}
-                };
-  gistData['files'][file_name] = { "content": content }
+  var data = {
+    "description": description,
+    "public": true,
+    "files": {}
+  };
+
+  data["files"][file_name] = {
+    "content": content
+  };
+
   $.ajax({
-    url: 'https://api.github.com/gists',
-    type: 'POST',
+    type: "POST",
+    url: "https://api.github.com/gists",
+    data: JSON.stringify(data),
     dataType: 'json',
-    headers: {
-      Authorization: token
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("Authorization", "token " + token);
     },
-    data: JSON.stringify(gistData)
-  }).done(function(response){
-    myGists(response.owner.login, token)
-  })
+  }).done(function(response) {
+      myGists(response.owner.login, token);
+    });
 };
 
 var myGists = function (username, token){
-  $.ajax({
-    url: 'https://api.github.com/users/' + username + '/gists',
-    type: 'GET',
-    dataType: 'json',
-    headers: {
-      Authorization: token
-    }
-  }).done(function(gists){
-    $.each(gists, function(index, gist){
-      var gistHTML = '<li><a href="' + gist.data.html_url + '">' + gist.data.description + '"</a></li>';
-      $("ul#gists").append(gistHTML);
-    })
+  $.get('https://api.github.com/users/' + username + '/gists', function(data){
+    $('#gists').html('');
+    data.forEach(function(gist){
+      $('#gists').append(
+        "<li><a href='" + gist.html_url + "'>" + gist.description + "</a></li>"
+        )
+    });
   });
 };
 
 var bindCreateButton = function() {
   // call functions here
-  $('#create_gist').click(function(){
+  $('#create').click(function(){
     var file_name = $('#file_name').val();
     var content = $('#content').val();
     var description = $('#description').val();
     var token = $('#token').val();
     createGist(file_name, content, description, token);
-  })
-
+  });
 };
 
 $(document).ready(function(){
