@@ -9,7 +9,7 @@
 For this lab we will be using the GitHub API to create and view Gists. In this lab you will create a UI that allows users to see a list of their gists and be able to create new ones.
 
 ## Instructions
-You will need to visit https://github.com/settings/tokens and create a personal token to use. This token allows you to request data for your account. Also, before you begin, visit https://developer.github.com/v3/gists/#list-a-users-gists and https://developer.github.com/v3/gists/#create-a-gist and review how to use the gist portion of the GitHub API.
+You will need to visit https://github.com/settings/tokens and create a personal token to use. This token allows you to request data for your account. Make sure you select "gists" from the checkboxes to allow your token to have access to that part of the Github API. Also, before you begin, visit https://developer.github.com/v3/gists/#list-a-users-gists and https://developer.github.com/v3/gists/#create-a-gist and review how to use the gist portion of the GitHub API.
 
 - Create the method `myGists(username, token)` that returns the gists for a user.
 - Create the method `createGist(file_name, content, description, token)` that creates a public gist.
@@ -32,17 +32,19 @@ With your code ready to go, create the UI.
 ### Hint
 The GitHub API requires you to send a token as part of the request
 headers. This token will be the personal token you created in the
-beginning of the lab. In order to set the headers you will need to
-provide a function to the `beforeSend` option of the `$.ajax` request.
-This function accepts a parameter of type [jqXHR](http://api.jquery.com/Types/#jqXHR) which we then call `setRequestHeader` to set the `Authorization` header. Below is an example of this configuration.
+beginning of the lab. To set the headers, you can pass the options
+that you need to the [`headers`](http://api.jquery.com/jquery.ajax/) field in
+your request options. An example is below:
 
-```javascript
-  $.ajax({
-    url: 'GitHub URL HERE',
-    type: 'POST',
-    beforeSend: function(xhr) {
-      xhr.setRequestHeader("Authorization", "token PERSON-TOKEN-HERE");
-    },
+``` javascript
+$.ajax({
+  url: 'GITHUB_URL_HERE',
+  type: 'POST',
+  dataType: 'json',
+  headers: {
+    Authorization: "token YOUR_TOKEN_HERE"
+  }
+})
 ```
 
 ## References
