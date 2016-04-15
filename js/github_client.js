@@ -19,7 +19,6 @@ var createGist = function(file_name, content, description, token){
     },
     data: JSON.stringify(data)
   }).done(function(response) {
-    debugger;
     myGists(response.owner.login, token);
   });
 };
@@ -30,7 +29,17 @@ var myGists = function (username, token){
             type: 'GET',
             dataType: 'json',
             success: function(data) {
-              debugger;
+              // debugger;
+              // add data to dom
+              // map over data
+              // data[0].html_url
+              // data[0].description
+
+
+              data.forEach(function(entry) {
+                var str = "<p>Description:" + entry.description + "  Link: " + entry.html_url + "</p>";
+                $("body").append(str);
+              });
             }
           });
 };
