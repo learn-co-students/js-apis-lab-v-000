@@ -4,6 +4,22 @@
 </head>
 <body>
 
+  <form onsubmit="bindCreateButton(); return false;">
+    <label for="personal_token">Personal token: </label><input type="text" name="personal_token" id="personal_token">
+
+    <label for="gist_filename">Gist filename: </label><input type="text" name="gist_file_name" id="gist_filename">
+
+    <label for="gist_description">Gist description: </label><input type="text" name="gist_description" id="gist_description">
+
+    <label for="gist_contents">Gist contents: </label><textarea name="gist_contents" id="gist_contents"></textarea>
+
+    <input type="submit" name="Create gist">
+  </form>
+
+  <div id="display_gists">
+
+  </div>
+
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
