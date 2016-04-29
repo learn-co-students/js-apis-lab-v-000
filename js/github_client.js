@@ -15,18 +15,8 @@ var createGist = function(file_name, content, description, token){
 
 var myGists = function(username, token) {
   debugger;
-  // var token = typeof token == "undefined" ? mySecret() : token;
-  // debugger;
-  
-};
-
-var bindCreateButton = function() {
-
-  $("#my-gists").click(function(event) {
-    var username = $('#username').length > 0 ? $('#username').val() : "authorbeard"
-    var token = $('#token').length > 0 ? $('#token').val() : mySecret()
-// debugger;
-
+  var username = $('#username').length > 0 ? $('#username').val() : "authorbeard"
+  var token = $('#token').length > 0 ? $('#token').val() : mySecret()
     $.ajax({
       url: defaultUrl + "users/" + username + "/gists",
       type: 'GET',
@@ -35,9 +25,16 @@ var bindCreateButton = function() {
         Authorization: "token " + token
       }
     }).done(function(gists){
-      console.log("Got 'em")
+      $.each(gists, function(index, gist) {
+        $('body').append(gist.description)
+      })
     })
-  });
+};
+  
+
+var bindCreateButton = function() {
+
+  $("#my-gists").click(myGists)   
 }
 
 
