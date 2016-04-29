@@ -1,6 +1,33 @@
 //define functions here
 // var login;
 // var token; 
+// var filename ='test_file.md'
+// var content = 'fake content'
+// var description = 'test description'
+// var token = 'fake token'
+
+
+// var data = {}
+// data.public = true
+// data.description = description
+
+// data.files = {}
+// data.files[filename] = {content: content}
+
+
+function buildData(file_name, content, description) {
+  var data = {}
+    data.public = true
+    data.description = description
+
+    data.files = {}
+    data.files[file_name] = {content: content}
+
+    return data
+}
+
+
+////ACTUAL CODE BELOW //////
 
 var defaultUrl = 'https://api.github.com/'
 
@@ -10,23 +37,17 @@ var createGist = function(file_name, content, description, token){
   // var username = $('#username').length > 0 ? $('#username').val() : "authorbeard"
   /// SETTING DEFAULT THIS WAY CAUSES TESTS TO FAIL
   // var token = typeof token !== 'undefined' ? token : mySecret()
-  return file_name
+
+  var data=buildData(file_name, content, description)
+  
   $.ajax({
     url: defaultUrl + "gists",
     type: 'POST',
     dataType: 'json',
+    data: JSON.stringify(data),
     headers: {
       Authorization: "token " + token
     },
-    data: JSON.stringify({ 
-        'public': true,
-        'description': description,
-        'files': {
-          file_name: {
-            'content': content
-          }
-        }
-      })
   }).done(function(response){
     var username = response.owner.login
     myGists(username, token)
@@ -66,3 +87,12 @@ var bindCreateButton = function() {
 $(document).ready(function(){
   bindCreateButton();
 });
+
+
+
+
+
+
+
+
+
