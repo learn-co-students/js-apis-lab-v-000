@@ -1,19 +1,3 @@
-//define functions here
-// var login;
-// var token; 
-// var filename ='test_file.md'
-// var content = 'fake content'
-// var description = 'test description'
-// var token = 'fake token'
-
-
-// var data = {}
-// data.public = true
-// data.description = description
-
-// data.files = {}
-// data.files[filename] = {content: content}
-
 
 function buildData(file_name, content, description) {
   var data = {}
@@ -26,20 +10,16 @@ function buildData(file_name, content, description) {
     return data
 }
 
-
-////ACTUAL CODE BELOW //////
-
 var defaultUrl = 'https://api.github.com/'
 
-var createGist = function(file_name, content, description, token){
-  
+var createGist = function(file_name, content, description, token){  
   /// USERNAME IS DERIVED FROM THE RESPONSE (STH LIKE RESPONSE.LOGIN)
   // var username = $('#username').length > 0 ? $('#username').val() : "authorbeard"
   /// SETTING DEFAULT THIS WAY CAUSES TESTS TO FAIL
   // var token = typeof token !== 'undefined' ? token : mySecret()
 
   var data=buildData(file_name, content, description)
-  
+
   $.ajax({
     url: defaultUrl + "gists",
     type: 'POST',
@@ -80,7 +60,15 @@ var myGists = function(username, token) {
 
 var bindCreateButton = function() {
 
-  $("#my-gists").click(createGist())   
+  $("#create-gist").click(function(event){
+
+    var file_name = $('#file-name').val()
+    var content = $('#content').val()
+    var description = $('#description').val()
+    var token = $('#token').val()
+
+    createGist(file_name, content, description, token)
+  })   
 }
 
 
