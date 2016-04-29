@@ -6,9 +6,12 @@ var createGist = function(file_name, content, description, token){
 
 };
 
-var myGists = function (username, token){
+var myGists = function(username, token) {
+  // var username = typeof username == "undefined" ? "authobeard" : username;
+  // var token = typeof token == "undefined" ? mySecret() : token;
+  // debugger;
   $.ajax({
-    url: defaultUrl + "/users" + username + "/gists",
+    url: defaultUrl + "users/" + username + "/gists",
     type: 'GET',
     dataType: 'json',
     headers: {
@@ -25,4 +28,7 @@ var bindCreateButton = function() {
 };
 
 $(document).ready(function(){
+  var username = $('#userame')
+  var token = $('#token')
+  $("#my-gists").click(myGists(username, token))
 });
