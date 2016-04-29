@@ -10,7 +10,7 @@ var createGist = function(file_name, content, description, token){
   // var username = $('#username').length > 0 ? $('#username').val() : "authorbeard"
   /// SETTING DEFAULT THIS WAY CAUSES TESTS TO FAIL
   // var token = typeof token !== 'undefined' ? token : mySecret()
-
+  return file_name
   $.ajax({
     url: defaultUrl + "gists",
     type: 'POST',
@@ -22,7 +22,7 @@ var createGist = function(file_name, content, description, token){
         'public': true,
         'description': description,
         'files': {
-          String(file_name): {
+          file_name: {
             'content': content
           }
         }
