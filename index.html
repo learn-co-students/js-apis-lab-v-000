@@ -4,6 +4,21 @@
 </head>
 <body>
 
+  <h1>Gists</h1>
+  
+  <h2>Create a new Gist</h2>
+  <form method="post" id="new-gist">
+    <p>Personal Token: <input type="text" id="token"></p>
+    <p>Gist File Name: <input type="text" id="file_name"></p>
+    <p>Gist Description: <input type="text" id="description"></p>
+    <p>Gist contents: <input type="text" id="content"></p>
+    <p><input type="submit" value="Create"></p>
+  </form>
+  
+  <h2>My Gists</h2>
+  <div id="gists">
+    
+  </div>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
