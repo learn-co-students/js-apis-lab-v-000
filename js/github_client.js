@@ -63,6 +63,5 @@ var bindCreateButton = function() {
 };
 
 $(document).ready(function(){
-    myGists("DakotaLMartinez", "c147ac95b66d01ef669c56b698d04606f89acbec");
     bindCreateButton();
 });
