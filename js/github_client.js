@@ -1,26 +1,21 @@
-
 var createGist = function(file_name, content, description, token){
   var url = "https://api.github.com/gists";
-  var data = JSON.stringify({
+  var data = {
         'public': true,
         'description': description,
-        'files': {
-          file_name: {
-            'content': content
-          }
-        }
-      });
-  debugger;
+        'files': {}
+      };
+  data['files'][file_name] = { 'content': content };
   $.ajax({
     url: url,
     type: 'POST',
     dataType: 'json',
-    data: data,
+    data: JSON.stringify(data),
     headers: {
       Authorization: token
     }
   }).done(function(response){
-    var username = response[0].owner.login;
+    var username = response.owner.login;
     myGists(username, token);
   });
 };
