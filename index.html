@@ -1,8 +1,24 @@
 <!doctype html>
+
 <head>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
+
+  <form class="" action="index.html" method="post">
+    <input id="token" type="text" name="token" value="token">
+    <input id="filename" type="text" name="filename" value="filename">
+    <input id="description" type="description" name="description" value="description">
+    <input id="content" type="text" name="content" value="content">
+    <button type="submit" name="submit">Submit</button>
+  </form>
+
+  <h2>Your Gists</h2>
+  <div>
+    <ul id="listOfGists">
+    </ul>
+  </div>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
