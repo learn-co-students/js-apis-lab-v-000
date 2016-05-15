@@ -1,28 +1,27 @@
-//define functions here
 var createGist = function(file_name, content, description, token){
+
   var data = {
-    "files": {},
-    "description": description,
-    "public": true
+    public: true,
+    description: description,
+    files: {}
   }
 
   data.files[file_name] = {
     "content": content
-  };
+  }
 
   $.ajax({
-    type: 'POST',
     url: 'https://api.github.com/gists',
-    dataType: 'json',
-    headers: {
-      Authorization: 'token'
-    },
-    data: JSON.stringify(data)
+    type: "POST",
+    data: JSON.stringify(data),
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("Authorization", "token " + token);
+    }
   }).done(function(response) {
-    myGists(response.owner.login, token);
-  });
-
+    myGists(response.owner.login, token)
+  })
 };
+
 
 var myGists = function (username, token){
   $.ajax({
@@ -38,18 +37,16 @@ var myGists = function (username, token){
   });
 };
 
-var bindCreateButton = function() {
-  // call functions here
-  $("#submit").on("click", function() {
-    var token = $("#token").val();
-    var fileName = $("#name").val();
-    var description = $("#description").val();
-    var contents = $("#contents").val();
-    createGist(token, fileName, description, contents);
-  });
+var bindCreateButton = function(e) {
+  e.preventDefault()
+  var file_name = $("#filename").val()
+  var content = $("#contents").val()
+  var description = $("#description").val()
+  var token = $("#token").val()
+
+  createGist(file_name, content, description, token)
 };
 
 $(document).ready(function(){
-  bindCreateButton();
+  $("input[type='submit']").on("click", bindCreateButton)
 });
-
