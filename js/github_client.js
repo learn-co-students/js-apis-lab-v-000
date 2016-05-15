@@ -31,7 +31,7 @@ var myGists = function (username, token){
     success: function(data) {
       data.forEach(function(gist) {
         var str = "<p>" + "<a href=" + entry.html_url + ">" + gist.description + "</a>" + "</p>";
-        $("h2").append(str);
+        $("#gists").append(str);
       });
     }
   });
