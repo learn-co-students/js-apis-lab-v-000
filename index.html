@@ -4,6 +4,20 @@
 </head>
 <body>
 
+  <h2>New Gist</h2>
+  <form class="create-a-gist" action="index.html" method="post">
+    <input type="text" name="token" placeholder="token">
+    <input type="text" name="filename" placeholder="filename">
+    <input type="text" name="description" placeholder="description">
+    <input type="text" name="contents" placeholder="contents">
+    <button type="submit" name="button" value="submit">new gist</button>
+  </form>
+
+  <hr>
+
+  <h2>Gists</h2>
+  <div class="gists"></div>
+
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
