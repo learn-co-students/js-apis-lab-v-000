@@ -1,41 +1,69 @@
-var createGist = function( file_name, content, description, token ) {
+var createGist = function(file_name, content, description, token) {
   var url = 'https://api.github.com/gists'
 
   var data = {
     'public':   true,
     'description': description,
     'files': {
-      [ file_name ]: {
+      [file_name]: {
         'content': content
       }
     }
   }
 
-  $.ajax( {
+  $.ajax({
+    url: 'https://api.github.com/gists',
     type: 'POST',
-    url: url,
-    data: ( JSON.stringify( data ) ),
-    headers: {
-      'Authorization': token
-    },
     dataType: 'json',
-  } );
-  myGists( 'fake login', token );
-  // myGists( 'genericlady', token );
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("Authorization", "token " + token);
+    },
+    data: JSON.stringify(data)
+  }).done(function(response) {
+    myGists(response.owner.login, token);
+  });
+  
 };
 
-var myGists = function( username, token ) {
+//   $.ajax({
+//     url: url,
+//     type: 'POST',
+//     dataType: 'json',
+//     beforeSend: function(xhr) {
+//       xhr.setRequestHeader("Authorization", "token " + token);
+//     }
+//     data: (JSON.stringify(data)),
+//     success: function(response) {
+//       myGists(response.owner.login, token);
+//     }
+//   } );
+//   myGists('fake login', token);
+//   // myGists( 'genericlady', token );
+// };
+
+var myGists = function(username, token) {
   var githubURL = 'https://api.github.com/users/' + username + '/gists'
 
-  $.ajax( {
+  $.ajax({
     url: githubURL,
     type: 'GET',
-    dataType: 'JSON',
+    dataType: 'jsonp',
     headers: {
-      'Authorization': token
+      'Authorization': 'token ' + token
     },
-    success: function( response ) {
-      console.log( response );
+    success: function(gists) {
+      $('#gists').html('');
+
+      jQuery.each(gists.data, function(index, gist) {
+        var link = $('<a>')
+          .attr('href', gist.html_url)
+          .text(gist.description);
+
+        var listItem = $('li')
+          .append(link);
+
+        $('#gists').append(listItem);
+      })
     }
   } );
 };
@@ -43,18 +71,17 @@ var myGists = function( username, token ) {
 var bindCreateButton = function() {
   var newGistParameters = {};
 
-  $( 'button' ).on( 'click', function( event ) {
-    var fields = $( ':input' ).serializeArray();
+  $('button').on('click', function(event) {
+    var fields = $(':input').serializeArray();
 
-    jQuery.each( fields, function( i, field ) {
-      newGistParameters[ field[ 'name' ] ] = field[ 'value' ];
+    jQuery.each(fields, function(i, field) {
+      newGistParameters[field['name']] = field['value'];
     } )
-    createGist( newGistParameters );
-    event.preventDefault();
+    createGist(newGistParameters);
 
-  } );
+  });
 };
 
-$( document ).ready( function() {
+$(document).ready(function() {
   bindCreateButton();
-} );
+});
