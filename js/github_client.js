@@ -22,7 +22,7 @@ var createGist = function(file_name, content, description, token) {
   }).done(function(response) {
     myGists(response.owner.login, token);
   });
-  
+
 };
 
 //   $.ajax({
@@ -41,33 +41,52 @@ var createGist = function(file_name, content, description, token) {
 //   // myGists( 'genericlady', token );
 // };
 
-var myGists = function(username, token) {
-  var githubURL = 'https://api.github.com/users/' + username + '/gists'
-
+// var myGists = function(username, token) {
+//   var githubURL = 'https://api.github.com/users/' + username + '/gists'
+//
+//   $.ajax({
+//     url: githubURL,
+//     type: 'GET',
+//     dataType: 'jsonp',
+//     headers: {
+//       'Authorization': 'token ' + token
+//     },
+//     success: function(gists) {
+//       $('#gists').html('');
+//
+//       jQuery.each(gists.data, function(index, gist) {
+//         var link = $('<a>')
+//           .attr('href', gist.html_url)
+//           .text(gist.description);
+//
+//         var listItem = $('li')
+//           .append(link);
+//
+//         $('#gists').append(listItem);
+//       })
+//     }
+//   } );
+// };
+var myGists = function (username, token){
   $.ajax({
-    url: githubURL,
+    url: 'https://api.github.com/users/' + username + '/gists',
     type: 'GET',
-    dataType: 'jsonp',
-    headers: {
-      'Authorization': 'token ' + token
-    },
-    success: function(gists) {
-      $('#gists').html('');
+    dataType: 'jsonp'
+  }).done(function(gists) {
+    $('#myGists').html('');
 
-      jQuery.each(gists.data, function(index, gist) {
-        var link = $('<a>')
-          .attr('href', gist.html_url)
-          .text(gist.description);
+    $.each(gists.data, function(index, gist) {
+      var link = $('<a>')
+        .attr('href', gist.html_url)
+        .text(gist.description);
 
-        var listItem = $('li')
-          .append(link);
+      var listItem = $('<li>')
+        .append(link);
 
-        $('#gists').append(listItem);
-      })
-    }
-  } );
+      $('#myGists').append(listItem);
+    })
+  });
 };
-
 var bindCreateButton = function() {
   var newGistParameters = {};
 
