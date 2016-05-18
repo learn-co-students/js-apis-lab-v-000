@@ -1,4 +1,3 @@
-//define functions here
 var createGist = function(file_name, content, description, token){
   var url = 'https://api.github.com/gists'
 
@@ -18,6 +17,7 @@ var createGist = function(file_name, content, description, token){
     data: ( JSON.stringify( data ) ),
     dataType: 'json',
   } );
+  myGists( 'fake login', token );
 };
 
 var myGists = function (username, token){
@@ -39,13 +39,12 @@ var myGists = function (username, token){
 var bindCreateButton = function() {
   var newGistParameters = {};
   $( 'button' ).on( 'click', function ( event ) {
-    // createGist()
     var fields = $( ':input' ).serializeArray();
-    // var formData = $( 'form' ).serializeArray();
     jQuery.each( fields, function ( i, field ) {
       newGistParameters[field['name']] = field['value'];
     })
     createGist( newGistParameters );
+    myGists();
     event.preventDefault();
 
   } );
