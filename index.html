@@ -3,6 +3,35 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	
+	<div class="clearfix">
+		<div>
+			<label for="token">Enter your token:</label>
+			<input type="text" id="token" value=""></input>
+		</div>
+	
+	
+		<div>
+			<label for="fn">File Name:</label>
+			<input type="text" id="fn"></input>
+			<br><br>
+			<label for="desc">Description:</label>
+			<textarea id="desc"></textarea>
+			<br><br>
+			<label for="content">Content:</label>
+			<textarea id="content"></textarea>
+		</div>
+	</div>
+
+	
+	<button id="create">Create</button>
+	
+	<div class="gists">
+		<ul>
+			
+		</ul>
+	</div>
+	
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
