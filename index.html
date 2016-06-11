@@ -3,6 +3,17 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+<h3>New Gist</h3>
+Filename:<input type='text' id='filename'><br>
+Description:<input type='text' id='description'><br>
+Personal Token:<input type='text' id='token'><br>
+Content:<textarea id='content'></textarea><br>
+
+<button type='submit' id='create_gist'>Create Gist</button>
+
+<h3>Gists:</h3>
+<ul id="gist-ul">
+</ul>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
