@@ -23,29 +23,40 @@ var createGist = function(file_name, content, description, token){
     },
     success: function(response) {
       console.log(response);
+
     }
+  }).done(function(response){
+    myGists(response["owner"]["login"],token);
   });
 
 };
+
+var displayGist = function(response) {
+  response.forEach(function(object) {
+    $("#public-gists").append(object["description"]);
+  });
+}
 
 var myGists = function (username, token){
   $.ajax({
-    url :baseUrl + "users/" +username+ "/gists",
+    url :baseUrl + "/users/" +username+ "/gists",
     type: 'GET',
     dataType: 'json',
     headers: {
-      Authorization: "token " +token
-    },
+        Authorization: "token " +token
+      },
     success: function(response) {
-      console.log(response);
+      displayGist(response);
+      debugger;
     }
   });
 
 };
 
+
+
 var bindCreateButton = function() {
-  $('#new-gist-form').submit(function(event){
-    debugger;
+  $('#new-gist').on('click', function(event){
     var file_name = $("#file_name").val() ;
     var token = $("#token").val() ;
     var description = $("#description").val() ;
@@ -55,8 +66,6 @@ var bindCreateButton = function() {
   })
 };
 $(document).ready(function(){
-  debugger;
-  myGists(username,token);
 
   bindCreateButton();
 });
