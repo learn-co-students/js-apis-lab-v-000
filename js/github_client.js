@@ -1,6 +1,27 @@
 //define functions here
 var createGist = function(file_name, content, description, token){
-
+  
+  var postData = {
+    "description": description,
+    "public": true,
+    "files": {
+      file_name: {
+        "content": content
+      }
+    }
+  }
+  
+  $.ajax({
+    url: 'https://api.github.com/gists',
+    type: 'POST',
+    dataType: 'json',
+    data: JSON.stringify(postData),
+    headers: {
+      Authorization: "token " + token
+    }
+  }).done(function(data){
+    myGists(data.owner.login, token);
+  })
 };
 
 var myGists = function (username, token){
@@ -13,7 +34,16 @@ var myGists = function (username, token){
       Authorization: 'token ' + token
     }
   }).success(function(data){
-    console.log(data);
+    // console.log(data);
+    $("#user-gists ul").html("");
+    $.each(data, function(index, gist){
+      console.log(gist);
+      var gistURL = gist.html_url;
+      var gistName = gist.description;
+      console.log("url: " + gistURL + "\n description: " + gistName);
+      $("#user-gists ul").append("<li><a href='" + gistURL + "'>" + "Gist Number: " + index + "</a></li>");
+    });
+
   });
 };
 
