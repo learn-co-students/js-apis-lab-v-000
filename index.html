@@ -3,7 +3,20 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  Username: <input type="text" name="username" id="username" />
+  Token: <input type="text" name="token" id="token" />
+<br />
+  File Name: <input type="text" name="file_name" id="file_name" />
+  Description: <input type="text" name="description" id="description" />
+  <br />
+  Content:<br />
+  <textarea name="content" id="content"></textarea>
+  <button type="button" name="submit" id="submit">Submit</button>
 
+  <div id="gists">
+    <ol>
+    </ol>
+  </div>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
