@@ -1,4 +1,3 @@
-// github token = 183e463f467342ce8c26424919376cecb0917a8b
 // https://api.github.com/users/reichardn/gists
 // https://api.github.com/gists
 //define functions here
@@ -17,10 +16,7 @@
 
 
 var createGist = function(file_name, content, description, token){
-  $.ajax({
-    type: 'POST',
-    url: 'https://api.github.com/gists',
-    data: { 
+  var dataObj = { 
         'description': description, 
         'public': true,
         'files': {
@@ -28,7 +24,13 @@ var createGist = function(file_name, content, description, token){
             'content': content
           }
         }
-    },
+      };
+  var data = JSON.stringify(dataObj);
+
+  $.ajax({
+    type: 'POST',
+    url: 'https://api.github.com/gists',
+    data: data,
     headers: {
       Authorization: `token ${token}`
     },
@@ -39,6 +41,7 @@ var createGist = function(file_name, content, description, token){
       console.log(e)
     }
   });
+  
 };
 
 var myGists = function (username, token){
