@@ -22,35 +22,40 @@ var createGist = function(file_name, content, description, token){
     headers: {
       Authorization: `token ${token}`
     },
-    success: function(msg){
-      console.log('successfully created');
-    },
     error: function(e) {
       console.log(e)
     }
+  }).done(function(data){
+      console.log('successfully created');
+      myGists(data['owner']['login'], token);
   });
-
 };
 
 var myGists = function (username, token){
-  var json;
   $.ajax({
     url: `https://api.github.com/users/${username}/gists`,
     type: 'GET',
     dataType: 'json',
-    async: false,
     headers: {
       Authorization: `token ${token}`
-    },
-    success: function(response) {
-      json = response;
     },
     error: function (error) {
       console.log('error');
     }
-  });
-  return json;
+    }).done(function(response) {
+      console.log('gists acquired');
+      buildGists(response);
+    });
 };
+
+var buildGists = function(json) {
+  var html = "";
+  for (i in json) {
+    console.log(json[i]['description']);
+    html += '<p>' + json[i]['description'] + '</p>';
+  }
+  $('#gists').html(html);
+}
 
 var bindCreateButton = function() {
   // call functions here
@@ -61,10 +66,10 @@ var bindCreateButton = function() {
     var description = $('#description').val();
     var token = $('#token').val();
     createGist(file_name, content, description, token);
-
   })
-
 };
 
+
 $(document).ready(function(){
+  bindCreateButton();
 });
