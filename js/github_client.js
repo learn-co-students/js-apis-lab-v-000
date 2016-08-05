@@ -5,18 +5,29 @@
 
 
 
+// data: {
+//       "description": "the description for this gist",
+//       "public": true,
+//       "files": {
+//         "file1.txt": {
+//           "content": "String file contents"
+//         }
+//       }
+//     }
+
+
 var createGist = function(file_name, content, description, token){
   $.ajax({
     type: 'POST',
     url: 'https://api.github.com/gists',
-    data: {
-      "description": "the description for this gist",
-      "public": true,
-      "files": {
-        "file1.txt": {
-          "content": "String file contents"
+    data: { 
+        'description': description, 
+        'public': true,
+        'files': {
+          filename: {
+            'content': content
+          }
         }
-      }
     },
     headers: {
       Authorization: `token ${token}`
