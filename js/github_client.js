@@ -3,24 +3,12 @@
 //define functions here
 
 
-
-// data: {
-//       "description": "the description for this gist",
-//       "public": true,
-//       "files": {
-//         "file1.txt": {
-//           "content": "String file contents"
-//         }
-//       }
-//     }
-
-
 var createGist = function(file_name, content, description, token){
   var dataObj = { 
         'description': description, 
         'public': true,
         'files': {
-          filename: {
+          file_name: {
             'content': content
           }
         }
@@ -41,7 +29,7 @@ var createGist = function(file_name, content, description, token){
       console.log(e)
     }
   });
-  
+
 };
 
 var myGists = function (username, token){
@@ -66,6 +54,15 @@ var myGists = function (username, token){
 
 var bindCreateButton = function() {
   // call functions here
+  // file_name, content, description, token
+  $('#create-button').on('click', function() {
+    var file_name = $('#file-name').val();
+    var content = $('#content').val();
+    var description = $('#description').val();
+    var token = $('#token').val();
+    createGist(file_name, content, description, token);
+
+  })
 
 };
 
