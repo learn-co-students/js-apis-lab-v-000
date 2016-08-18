@@ -16,7 +16,7 @@ var createGist = function(file_name, content, description, token){
     type: 'POST',
     dataType: 'json',
     headers: {
-      Authorization: "token e0fcc85b3c1137d072449cbf8e1a525ef2912044"
+      Authorization: "token 1234" //removed token
     },
     data: JSON.stringify(data)
   }).done(function(results) {
@@ -30,9 +30,6 @@ var myGists = function (username, token){
   url: 'https://api.github.com/users/' + username + '/gists',
   type: 'GET',
   dataType: 'jsonp',
-  // headers: {
-  //   Authorization: "token" + "e0fcc85b3c1137d072449cbf8e1a525ef2912044"
-  // },
   success: function(gists) {
     console.log("gists successfully pulled" + gists);
     var gistHtml = "";
