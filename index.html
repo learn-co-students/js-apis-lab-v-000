@@ -3,7 +3,18 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <div class="main">
+    <h1>Enter a Gist</h1>
+    <form action="POST" method="post">
+      <p>Token: <input type="text" name="token" id="token"></p>
+      <p>File name: <input type="text" name="file_name" id="file_name"></p>
+      <p>Description: <input type="text" name="description" id="description"></p>
+      Content: <textarea name="contents" name="content" id="content" cols="30" rows="10"></textarea>
+      <p><input type="button" id="create" value="Create"></p>
+    </form>
 
+    <div id="listGists"></div>
+  </div>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
