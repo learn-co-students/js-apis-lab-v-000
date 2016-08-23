@@ -10,6 +10,15 @@ var createGist = function(file_name, content, description, token){
       [file_name] : {"content": content}}
     }
 
+// var createGist = function(file_name, content, description, token){
+//   var gistData = {
+//     "description": description,
+//     "public": true,
+//     "files": {}
+//   };
+
+//   gistData["files"][file_name] = {'content': content}
+
  $.ajax({
     url: 'https://api.github.com/gists',
     type: 'POST',
