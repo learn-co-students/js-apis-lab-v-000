@@ -1,49 +1,57 @@
-$(document).ready(function(){
-  bindCreateButton();
-});
 
 //define functions here
+
 var createGist = function(file_name, content, description, token){
-  var gist_info = {
+  var  myToken ="330946765add59f83604c5a493f0ee791a640861"
+  var data = {
     'public': true,
     'description': description,
-    'files': {}
-  }
+    'files': { }
+  }; data['files'][file_name] = { 'content' : content};
 
-  gist_info['files'][file_name] = {
-    'content': content
-  }
+
   $.ajax({
-    url: 'https://api.github.com/gists',
+    url: "https://api.github.com/gists",
     type: 'POST',
-    dataType: 'json',
-    headers: {'Authorization': token},
-    data: JSON.stringify(gist_info)
-  }).done(function(response) {
-    myGists(response.owner.login, token)
-  });
+    dataType: 'JSON',
+    data: JSON.stringify(data),
+    headers: {
+      Authorization: "token + myToken"
+    }
+  }).done(function(response){
+    debugger;
+    myGists(response['owner']['login'], token)
+  })
 };
 
 var myGists = function (username, token){
+    var  myToken ="330946765add59f83604c5a493f0ee791a640861"
+    var data = {'owner': {} };
+        data['owner'] = {'login': username };
+
   $.ajax({
-    url: 'https://api.github.com/users/' + username + '/gists',
+    url: "https://api.github.com/gists",
     type: 'GET',
-    dataType: 'json',
-    success: function (result) {
-      $.each(result, function(index, gist) {
-        $("#user-info").append('<li>' + gist.description + '</li>');
-      })
+    dataType: 'JSON',
+    data: JSON.stringify(owner),
+    headers: {
+      Authorization: "token + myToken"
     }
   })
 };
 
 var bindCreateButton = function() {
-  $("#create-gist").on("click", function(event) {
-    var token = $('#token').val();
-    var file_name = $('#file_name').val();
-    var description = $('#description').val();
-    var content = $('#content').val();
-    createGist(file_name, content, description, token);
-  })
+// call functions here
+ var file_name = $("#name").val()
+ var content = $("#content").val()
+ var token = $("#token").val()
+ var description = $("#description").val()
+ $(button).on(click, function(event){
+   event.stopPropagation()
+   createGist(file_name, content, description, token);
+   myGists(username, token);
+ });
 };
 
+$(document).ready(function(){
+});
