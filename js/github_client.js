@@ -12,7 +12,7 @@ var createGist = function(file_name, content, description, token){
     type: "POST",
     dataType: "json",
     headers: {
-      Authorization: "token 9f0bcbbe9151cf483af77735ebfcc9869bbae319"
+      Authorization: "token 9e3cb4dac129eb11756de091f88dc20bc2c19cca"
     },
     data: JSON.stringify(data)
   }).done(function(response){
