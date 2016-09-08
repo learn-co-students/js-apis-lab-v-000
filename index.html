@@ -3,6 +3,25 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <h3>Create A New GitHub Gist</h3>
+
+  <form id="create-new-gist">
+    <label for="token">Personal token</label>
+    <input type="text" name="token"><br />
+
+    <label for="fileName">Gist file name</label>
+    <input type="text" name="file_name"><br />
+
+    <label for="description">Gist description</label>
+    <input type="text" name="description"><br />
+
+    <label for="content">Gist content</label>
+    <input type="text" name="content"><br />
+
+    <input id="gistSubmit" type="submit" value="Create Gist">
+  </form>
+
+  <div id="public-gists"></div>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
