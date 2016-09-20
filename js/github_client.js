@@ -1,26 +1,27 @@
 //define functions here
-var createGist = function(file_name, content, description, token){
-  // console.log(description);
+var createGist = function(fileName, content, description, token){
 
-  // var data = {
-  //   'description': description,
-  //   'public': true,
-  //   'files': {}
-  // };
-  //
-  // data['files'][file_name] = {
-  //   'content': content
-  // };
 
   var data = {
-  "description": "Some Description goes here.",
-  "public": true,
-  "files": {
-    "file1.txt": {
-      "content": "String file contents"
-    }
-  }
-}
+    'description': description,
+    'public': true,
+    'files': {}
+  };
+
+  data['files'][fileName] = {
+    'content': content
+  };
+
+// Hardcoded Data. At the time of this submission, this is what works properly. :/
+//   var data = {
+//   "description": "Hardcoded Description",
+//   "public": true,
+//   "files": {
+//     "file1.txt": {
+//       "content": "String file contents"
+//     }
+//   }
+// }
 
   $.ajax({
     url: 'https://api.github.com/gists',
@@ -28,12 +29,15 @@ var createGist = function(file_name, content, description, token){
     beforeSend: function(xhr) {
         xhr.setRequestHeader("Authorization", "token " + token);
     },
-    data: JSON.stringify(data)
+    data: JSON.stringify(data),
   }).done(function(response) {
     console.log(response);
     myGists(response.owner.login, token);
+  }).fail(function(response){
+    console.log(response);
   });
 };
+
 
 var myGists = function (username, token){
   var baseURL = "https://api.github.com";
