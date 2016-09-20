@@ -3,7 +3,16 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-
+  <form action="#">
+    <input type="text" id="token" placeholder="Token"><br />
+    <input type="text" id="file-name" placeholder="File Name"><br />
+    <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea><br />
+    <textarea name="content" id="content" cols="30" rows="10" placeholder="Content"></textarea><br />
+    <input type="submit" id="create-gist" value="Create Gist">
+  </form>
+  <div id="gists">
+    <h1>Your Gists</h1>
+  </div>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
