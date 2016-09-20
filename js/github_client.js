@@ -1,5 +1,5 @@
 //define functions here
-var createGist = function(fileName, content, description, token){
+var createGist = function(file_name, content, description, token){
   // console.log(description);
 
   // var data = {
@@ -8,12 +8,12 @@ var createGist = function(fileName, content, description, token){
   //   'files': {}
   // };
   //
-  // data['files'][fileName] = {
+  // data['files'][file_name] = {
   //   'content': content
   // };
 
   var data = {
-  "description": "Some Description",
+  "description": "Some Description goes here.",
   "public": true,
   "files": {
     "file1.txt": {
@@ -31,12 +31,12 @@ var createGist = function(fileName, content, description, token){
     data: JSON.stringify(data)
   }).done(function(response) {
     console.log(response);
+    myGists(response.owner.login, token);
   });
 };
 
 var myGists = function (username, token){
   var baseURL = "https://api.github.com";
-
 $.ajax({
     url: baseURL + "/users/" + username + "/gists",
     type: 'GET',
@@ -63,14 +63,18 @@ var bindCreateButton = function() {
 };
 
 var displayGists = function(response) {
+  var html = ""
   $.each(response, function(k, v){
+    html += "<p>"
+    html += "<a href='" + v. html_url+ "'>"
+    html += v.description
+    html += "</a>"
+    html += "</p>"
   })
+
+  $('#gists').html(html);
 }
 
 $(document).ready(function(){
   bindCreateButton();
-  // createGist();
 });
-
-// var token = 'daae76e10edb31bd5b2dd41bfaa0fa4415ff2cc9';
-// daae76e10edb31bd5b2dd41bfaa0fa4415ff2cc9
