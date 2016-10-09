@@ -1,13 +1,20 @@
-//define functions here
-var tkn = "a3bef0996a87cd2aa8db7ec6ffb80adb13a0671c"
+// //define functions here
 
 var createGist = function(file_name, content, description, token){
-  var files = {[file_name] : {'content': content}}
+  var data = {
+    'public':   true,
+    'description': description,
+    'files': {}
+  };
+
+  data['files'][file_name] = {
+    'content': content
+  };
   $.ajax({
     url: 'https://api.github.com/gists',
     type: 'POST',
     dataType: 'json',
-    data: JSON.stringify({'public': true, 'description': description, files }),
+    data: JSON.stringify(data),
     headers: {
       Authorization: token
     }
@@ -15,8 +22,8 @@ var createGist = function(file_name, content, description, token){
    myGists(response.owner.login, token);
  });
 };
-
-
+//
+//
 var myGists = function (username, token){
   $.ajax({
     url: 'https://api.github.com/users/' + username + '/gists',
