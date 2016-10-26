@@ -13,7 +13,7 @@ var createGist = function(file_name, content, description, token){
     url: 'https://api.github.com/gists',
     type: 'POST',
     datatype: 'json',
-    data: JSON.stringify(input),
+    data: JSON.stringify(githubInput),
     headers: {
       Authorization: 'token ' + token
     }
