@@ -1,4 +1,6 @@
-//define functions here
+// Excellent resource to better understand jQuery/AJAX GET and POST requests:
+// http://www.w3schools.com/jquery/jquery_ajax_get_post.asp
+
 var createGist = function(file_name, content, description, token){
   var githubInput = {
     'public': true,
@@ -50,7 +52,3 @@ var bindCreateButton = function() {
 $(document).ready(function(){
   bindCreateButton();
 });
-
-
-// Personal token:
-// 0f67a2c1f8d115a6e431acd0888ce902a5fc8615
