@@ -1,6 +1,3 @@
-//define functions here
-// var token = 64617174385df2078fd7e2115c8f5a8ae2b2b593;
-
 var createGist = function(file_name, content, description, token){
   var data = {
     "description": description,
@@ -38,5 +35,3 @@ $(document).ready(function(){
 });
 
 
-// Tokens you have generated that can be used to access the GitHub API.
-// gist 64617174385df2078fd7e2115c8f5a8ae2b2b593
