@@ -14,7 +14,10 @@ var createGist = function(file_name, content, description, token){
   		headers: {
     		Authorization: "token " + token
   		}
-	})	
+	}).done(function(data){
+		myGists(data.owner.login, token);
+	})
+	
 };
 
 var myGists = function (username, token){
@@ -42,9 +45,8 @@ var bindCreateButton = function() {
   	content = $("input[name=gist_content]").val();
   	description = $("input[name=gist_description]").val();
   	token = $("input[name=personal_token]").val();
-  	username = $("input[name=username").val();
   	createGist(file_name, content, description, token);
-  	myGists(username, token);
+  	
   })
 
 };
