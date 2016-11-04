@@ -4,6 +4,35 @@
 </head>
 <body>
 
+  <h2>Create Gist</h2>
+
+  <label for="token">Token</label>
+  <input type="text" id="token" name="token">
+
+  <br />
+
+  <label for="file_name">File Name</label>
+  <input type="text" id="file_name" name="file_name">
+
+  <br />
+
+  <label for="description">Description</label>
+  <input type="text" id="description" name="description">
+
+  <br />
+
+  <label for="contents">Content</label>
+  <input type="text" id="content" name="content">
+
+  <br />
+
+  <input type="button" id="create" name="create" value="Create Gist">
+
+  <br />
+
+  <p id="gist-list" style="display: none">
+  </p>
+
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
