@@ -25,7 +25,7 @@ var createGist = function(file_name, content, description, token){
 };
 
 var myGists = function (username, token){
-    var  myToken ="683e0c041456f5bb334c013339b369bd28c7ef97"
+    var  myToken ="token"
     var data = {'owner': {} };
         data['owner'] = {'login': username };
 
