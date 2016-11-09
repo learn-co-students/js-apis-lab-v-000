@@ -1,7 +1,5 @@
 //define functions here
 
-var token = "7682ac32d3379c3c9333be556e4911c5bb1d885a";
-
 function createGist(file_name, content, description, token){
   var data = {
     'public' : true,
