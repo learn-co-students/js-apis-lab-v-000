@@ -19,12 +19,9 @@ function createGist(file_name, content, description, token){
     data: JSON.stringify(data),
     beforeSend: function(xhr) {
       xhr.setRequestHeader("Authorization", "token " + token);
-    },
-    error: function(xhr, ajaxOptions, thrownError){
-      alert(xhr.status);
-      alert(thrownError);
-    },
-    success:
+    }
+  }).done(function(data) {
+    myGists(data.owner.login, token);
   });
 }
 
