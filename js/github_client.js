@@ -16,7 +16,7 @@ var createGist = function(file_name, content, description, token){
 	  data: JSON.stringify(dataHash)
 	};
 	$.ajax(requestHash).done(function(response) {
-		myGists(response.owner.login, token);
+		return myGists(response.owner.login, token);
 	}).fail(function(error) {
 		console.log("I am error!");
 		console.log(error);
@@ -41,7 +41,13 @@ var myGists = function (username, token){
 
 var bindCreateButton = function() {
   // call functions here
-
+  $('#create-gist').on("click", function(event){
+  	var file_name = $('#file_name').val();
+  	var content = $('#content').val();
+  	var description = $('#description').val();
+  	var token = $('#token').val();
+  	var gists = createGist(file_name, content, description, token);
+  });
 };
 
 $(document).ready(function(){
