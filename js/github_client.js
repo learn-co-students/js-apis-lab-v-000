@@ -1,7 +1,5 @@
 //define functions here
-// var token = 'ab793ff899119412691c20294187f7f5c0eec288';
 var baseUrl = "https://api.github.com/";
-var username = "CFaught";
 
 
 var createGist = function(file_name, content, description, token){
@@ -47,7 +45,6 @@ var myGists = function (username, token){
       html += '</div>';
     });
     $('#myGists').html(html);
-    // console.log(response);
   });
 };
 
