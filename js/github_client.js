@@ -2,17 +2,16 @@
 var baseUrl = "https://api.github.com/";
 
 
-var createGist = function(file_name, content, description, token){
+function createGist(file_name, content, description, token){
   var url = baseUrl + 'gists';
   var data = {
     'description': description,
     'public': true,
-    'files': {
-      [file_name]: {
-        'content': content
-      }
-    }
-  }
+    'files': {}
+  };
+  data['files'][file_name] = {
+    'content': content
+  };
 
   $.ajax({
     url: url,
@@ -27,9 +26,9 @@ var createGist = function(file_name, content, description, token){
   });
 };
 
-var myGists = function (username, token){
+function myGists(username, token){
   var url = baseUrl + 'users/' + username + '/gists';
-  var html = "<div>";
+  var html = "<h2>My Gists</h2><div>";
 
   $.ajax({
     url: url,
@@ -41,14 +40,14 @@ var myGists = function (username, token){
   }).done(function(response) {
     $.each(response.data, function(i, gist) {
       html += '<h2>' + gist.owner.login + '</h2>';
-      html += '<a href="' + gist.html_url + '">' + gist.html_url + '</a>';
+      html += '<a href="' + gist.html_url + '">' + gist.description + '</a>';
       html += '</div>';
     });
     $('#myGists').html(html);
   });
 };
 
-var bindCreateButton = function() {
+function bindCreateButton() {
   // call functions here
   $('#submit').on('click', function(event) {
     event.preventDefault();
