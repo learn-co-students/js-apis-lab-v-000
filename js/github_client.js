@@ -1,12 +1,12 @@
 //define functions here
 var createGist = function(file_name, content, description, token){
-  var data = {
+  var gist = {
     'public': true,
     'description': description,
     'files': {}
   };
 
-  data.files[file_name] = {'content': content};
+  gist.files[file_name] = {'content': content};
 
   $.ajax({
     url: 'https://api.github.com/gists',
@@ -15,23 +15,26 @@ var createGist = function(file_name, content, description, token){
     headers: {
       Authorization: token
     },
-    data: JSON.stringify(data)
+    data: JSON.stringify(gist)
   }).done(function(response) {
     myGists(response.owner.login, token);
   });
 };
 
 var myGists = function (username, token){
-  // $.ajax({
-  //   url: 'https://api.github/com/users/' + username + '/gists/',
-  //   type; 'GET',
-  //   dataType: 'json',
-  //   success: function(response) {
-  //     $.each(response, function(index, gist) {
-  //       $('#user-info').append('<li>' + gist.description + '</li>');
-  //     });
-  //   }
-  // });
+  $.ajax({
+    url: 'https://api.github/com/users/' + username + '/gists/',
+    type; 'GET',
+    dataType: 'json',
+    success: function(response) {
+      $.each(response, function(index, gist) {
+        $('#user_info').append('<li>' + gist.description + '</li>');
+      });
+    },
+    error: function() {
+      alert('There was an error with the request. Please try again.');
+    }
+  });
 };
 
 var bindCreateButton = function() {
