@@ -24,7 +24,7 @@ var createGist = function(file_name, content, description, token){
 var myGists = function (username, token){
   $.ajax({
     url: 'https://api.github/com/users/' + username + '/gists/',
-    type; 'GET',
+    type: 'GET',
     dataType: 'json',
     success: function(response) {
       $.each(response, function(index, gist) {
