@@ -56,6 +56,3 @@ var bindCreateButton = function() {
 $(document).ready(function(){
   bindCreateButton();
 });
-
-
-// e2e944199d9d85f77883067c7452fb1560292fef
