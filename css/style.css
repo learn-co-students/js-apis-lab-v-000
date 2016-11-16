@@ -1,3 +1,18 @@
 .hidden {
   display: none;
 }
+
+.create-gist, .user-authentication {
+  float: left;
+  padding-left: 50px;
+}
+
+.main-container {
+  padding-top: 20px;
+}
+
+#myGists {
+  float: left;
+  margin: 0px;
+  padding-left: 50px;
+}

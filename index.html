@@ -3,6 +3,38 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <div class="main-container">
+    
+    <div class="user-authentication">
+      <h2>Authentication</h2>
+      <label for="token">Your Github Token</label><br>
+      <input id="token" type="text">
+    </div>
+
+    <div class="create-gist">
+      <h2>Create Gist</h2>
+      <div class="gist-field">
+        <label for="file_name">File Name</label>
+        <input id="file_name" type="text">
+      </div>
+      <div class="gist-field">
+        <label for="description">Description</label>
+        <textarea id="description"></textarea>
+      </div>
+      <div class="gist-field">
+        <label for="content">Content</label>
+        <textarea id="content"></textarea>
+      </div>
+      <br>
+      <input type="button" id="create" value="Create"><br>
+    </div>
+
+    <ul id="myGists">
+      <h2>My Gists</h2>
+      <p>Gists will go here</p>
+      <!-- use JS to put gists here -->
+    </ul>
+  </div>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
