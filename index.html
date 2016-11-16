@@ -1,9 +1,37 @@
 <!doctype html>
 <head>
+  <title>Github Gists</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
 
+<body>
+  <p>
+    <label for="token"><strong>Personal Token:</strong></label>
+    <input type="text" id="token">
+  </p>
+
+  <p>
+    <label for="file_name"><strong>File Name:</strong></label>
+    <input type="text" id="file_name">
+  </p>
+
+  <p>
+    <label for="content"><strong>Content:</strong></label>
+    <textarea name="content" id="content" cols="30" rows="10" placeholder="Write the content here..."></textarea>
+  </p>
+
+  <p>
+    <label for="description"><strong>Description:</strong></label>
+    <textarea name="description" id="description" cols="30" rows="10" placeholder="Write your description here..."></textarea>
+  </p>
+
+  <!-- <button id="submit">Create Gist</button> -->
+  <input id="submit" type="button" value="Create Gist">
+
+  <h1>My Gists</h1>
+  <ul id="gists">
+
+  </ul>
   <script src="js/jquery-2.1.1.min.js"></script>
-  <script src="js/github_client.js"></script>
+  <script src="js/api_client.js"></script>
 </body>
