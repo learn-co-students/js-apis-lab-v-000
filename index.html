@@ -3,7 +3,23 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <form id="gist_form" action="index.html" method="post">
+    <label>Token: </label>
+    <input type="text" name="" id="gistToken"><hr>
+    <label>File Name: </label>
+    <input type="text" name="" id="gistFileName"><hr>
+    <label>Description: </label>
+    <input type="text" name="" id="gistDescription"><hr>
+    <label>Contents: </label>
+    <input type="text" name="" id="gistContents"><hr>
+    <input type="button" id="create" value="Create" onclick="bindCreateButton()">
+  </form>
 
+  <div >
+    <ul id="myGists">
+
+    </ul>
+  </div>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
