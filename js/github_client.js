@@ -42,7 +42,6 @@ var myGists = function (username, token){
 
 var bindCreateButton = function() {
   // call functions here
-	debugger
 	var token = $('#gistToken').val();
 	var file_name = $('#gistFileName').val();
 	var description = $('#gistDescription').val();
