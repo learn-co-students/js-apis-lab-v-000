@@ -16,7 +16,6 @@ var createGist = function(file_name, content, description, token){
       },
       data: JSON.stringify(jsonString)
   }).done(function(response) {
-    console.log(response);
     myGists( response.owner.login, token);
   })
 };
