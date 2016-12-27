@@ -15,7 +15,7 @@ var createGist = function(file_name, content, description, token){
 		dataType: 'json',
 		data: JSON.stringify(data),
 		headers: {
-			Authorization: `token ${token}`
+			Authorization: "token " + token
 		}
 	}).done(function(response) {
 		myGists(response.owner.login, token);
@@ -28,13 +28,11 @@ var myGists = function (username, token){
 		type: 'GET',
 		dataType: 'json',
 		headers: {
-			Authorization: `token ${token}`
+			Authorization: "token " + token
 		}
 	}).done(function(gists) {
 		$.each(gists, function(index, gist) {
-			$('#myGists').append(`<li>
-				<a href="${gist.html_url}">${gist.description}</a>
-				</li>`
+			$('#myGists').append("<li><a href='" + gist.html_url + "'>"+gist.description+"</a></li>"
 			)
 		})
 	});
