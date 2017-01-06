@@ -1,24 +1,25 @@
 //define functions here
 var createGist = function(file_name, content, description, token){
-  var file = {}
-  file[`${file_name}`] = {content: content}
-
   var body = {
-    description: description,
-    public: true,
-    files: file
+    'description': description,
+    'public': true,
+    'files': {}
   }
+  body['files'][file_name] = {
+    'content': content
+  };
+
   $.ajax({
     url: 'https://api.github.com/gists',
     type: 'POST',
     dataType: 'json',
-    body: JSON.stringify(body),
+    data: JSON.stringify(body),
     headers: {
-      Authorization: "Token " + token
+      Authorization: "token " + token
     }
-  }).done(gist => {
+  }).done(function(gist) {
     myGists(gist.owner.login, token)
-  })
+  });
 };
 
 var myGists = function (username, token){
@@ -27,9 +28,9 @@ var myGists = function (username, token){
     type: 'GET',
     dataType: 'json',
     headers: {
-      Authorization: "Token " + token
+      Authorization: "token " + token
     }
-  })
+  });
 };
 
 var bindCreateButton = function() {
