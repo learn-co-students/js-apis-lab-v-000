@@ -16,7 +16,7 @@ var createGist = function(file_name, content, description, token){
     headers: {
       Authorization: "Token " + token
     }
-  }).done(function(gist) {
+  }).done(gist => {
     myGists(gist.owner.login, token)
   })
 };
