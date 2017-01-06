@@ -14,8 +14,10 @@ var createGist = function(file_name, content, description, token){
     dataType: 'json',
     body: JSON.stringify(body),
     headers: {
-      Authorization: token
+      Authorization: "Token " + token
     }
+  }).done(function(gist) {
+    myGists(gist.owner.login, token)
   })
 };
 
