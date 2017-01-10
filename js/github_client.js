@@ -26,7 +26,6 @@ var myGists = function (username, token){
     dataType: 'jsonp'
   }).done(function(response) {
     //format into list and append html to index
-    //$('#userGists');
 
     var html = '<ul>';
 
