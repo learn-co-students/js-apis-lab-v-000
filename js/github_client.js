@@ -26,7 +26,7 @@ var myGists = function (username, token){
     dataType: 'jsonp'
   }).done(function(response) {
     //format into list and append html to index
-    $('#userGists');
+    //$('#userGists');
 
     var html = '<ul>';
 
@@ -37,7 +37,7 @@ var myGists = function (username, token){
     html += '</ul>';
   });
 
-  $('#gists').append(html);
+  $('#userGists').append(html);
 };
 
 var bindCreateButton = function() {
