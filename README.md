@@ -16,6 +16,8 @@ You will need to visit [Github Tokens](https://github.com/settings/tokens) and c
 - Create the method `bindCreateButton` that will bind the click event
   for the button that makes our request.
 
+>Note: To get the tests to pass, do not use any ES6 syntax (that includes string interpolation ``${}``, arrow function `=>`, `const`, `let`, ...)
+
 ### User Interface
 With your code ready to go, create the UI.
 - Create a form for the user to enter
