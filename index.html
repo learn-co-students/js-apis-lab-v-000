@@ -3,6 +3,35 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <h2>Authentication</h2>
+  <div>
+    <label for="token">Personal Token:</label>
+    <input id="token" type="text">
+  </div><br>
+
+  <div>
+    <label for="file_name">File Name:</label>
+    <input id="file_name" type="text">
+  </div><br>
+
+  <div>
+    <label for="content">Content:</label>
+    <textarea id="content"></textarea>
+  </div><br>
+
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description"></textarea>
+  </div><br>
+
+  <input id="create" type="button" value="Create">
+
+  <h2>My Gists</h2>
+  <div>
+    <ul id="myGists">
+
+    </ul>
+  </div>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
