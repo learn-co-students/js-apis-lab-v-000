@@ -4,6 +4,15 @@
 </head>
 <body>
 
+ <form>
+   <label for="personal_token">Personal token: </label><input type="text" name="personal_token" id="personal_token">
+   <label for="gist_filenamet">Gist Filename: </label><input type="text" name="gist_filenamet" id="gist_filenamet">
+   <label for="gist_description">Description: </label><input type="text" name="gist_description" id="gist_description">
+   <label for="gist_contents">Contents: </label><textarea name="gist_contents" id="gist_contents"></textarea>
+   <input type="button" id='create' value="Create">
+ </form>
+ <ul id='display_gists'>
+ </ul>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
