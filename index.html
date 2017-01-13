@@ -4,6 +4,24 @@
 </head>
 <body>
 
+  <h2>Create a Gist</h2>
+  <label for="token">Personal Token:</label><br>
+  <input type="text" name="token" id="token" placeholder="Gist token from Github"><br>
+
+  <label for="name">Name:</label><br>
+  <input type="text" name="name" id="name" placeholder="Name your gist"><br>
+
+  <label for="description">Description:</label><br>
+  <input type="text" name="description" id="description"><br>
+
+  <label for="content">Contents:</label><br>
+  <textarea name="content" id="content" rows="3">
+  </textarea><br>
+
+  <input type="submit" id="submit">
+
+  <div id="list-gists"></div>
+
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
