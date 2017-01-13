@@ -3,6 +3,25 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	<h1>The Gist App:</h1>
+	<div>
+		<h2>Authenticate</h2>
+		<p>Your Github Auth token: <input type="text" id="token"></p>
+	</div>
+	<div>
+		<h2>My Gists</h2>
+		<ul id="myGists">
+		</ul>
+	</div>	
+	<div>
+		<h2>Create a New Gist</h2>
+		<form>
+			<p>Gist File Name: <input type="text" id="file"></p>
+			<p>Gist Description: <textarea id="description" rows="10"></textarea></p>
+			<p>Gist Content: <textarea id="content" rows="10"></textarea></p>
+			<p><input type="submit" value="Create Public Gist" id="createButton"></p>
+		</form>
+	</div>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
