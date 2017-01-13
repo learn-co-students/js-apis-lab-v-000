@@ -3,7 +3,24 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <h1>DEEZ GISTS</h1>
+
+  <form id="gist-form">
+    <p>Whattaya wanna call this gist?  <input type="text" id="file-name"></input></p>
+    <p>Describe yer gist in one sentence:  <input type="text" id="description"></input></p>
+    <p>Write yer gist here:  <input type="text" id="content"></input></p>
+    <p>Past yer GH token here: <input type="text" id="token"></input></p>
+
+    <button id="create-gist">Create this gist</button><br>
+  </form>
+
+
+  <h3>Here's yer other gists:</h3>
+
+    <div id="gist-list">
+    </div>
 
   <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/secrets.js"></script>
   <script src="js/github_client.js"></script>
 </body>
