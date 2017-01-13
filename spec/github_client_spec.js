@@ -43,7 +43,7 @@ describe('js-apis-lab', function() {
       spyOn(JSON, 'stringify').and.returnValue('fakeString');
 
       createGist('test_file.md', 'fake content', 'test description', 'fake token');
-
+      debugger
       expect($.ajax.calls.argsFor(0)[0].data).toEqual('fakeString');
       expect(JSON.stringify.calls.argsFor(0)[0]).toEqual(expectedData);
     });
