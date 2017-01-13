@@ -4,6 +4,24 @@
 </head>
 <body>
 
+  <form>
+    <label name="token">Your Token: </label>
+    <input type="text" name="token" id="token"><br>
+    <label name="filename">File Name: </label>
+    <input type="text" name="filename" id="filename"><br>
+    <label name="description">Description: </label>
+    <input type="text" name="description" id="description"><br>
+    <label name="content">Content: </label>
+    <input type="text" name="content" id="content"><br>
+    <button type="submit" id="create_gist">Create new gist</button>
+  </form>
+
+  <h3>Your gists:</h3>
+  <br>
+  <ul id="your_gists">
+    
+  </ul>
+
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
