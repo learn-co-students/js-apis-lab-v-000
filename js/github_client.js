@@ -53,6 +53,8 @@ var bindCreateButton = function() {
     var description = $('#description').val();
 
     createGist(file_name, content, description, token);
+
+    // important to preventDefault otherwise the form gets submitted and refresh stops the whole function
     event.preventDefault();
   });
 };
