@@ -1,9 +1,22 @@
-<!doctype html>
+<html>
 <head>
+  <title>Gist</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/github_client.js" type="text/javascript"></script>
 </head>
 <body>
+<div>
+  <p>Enter gist Info</p>
+  Token: <input type="text" name="personaltoken" id="personaltoken"><br>
+  Gist filename: <input type="text" name="gistFName" id="gistFName"><br>
+  Description: <input type="text" name="gistDesc" id="gistDesc"><br>
+  Content: <input type="text" name="gistContent" id="gistContent">
+</div>
+<div>
+    <p><a href="#" id="createbtn">Create gist</a></p>
+  </div>
+    <div id="results">here</div>
 
-  <script src="js/jquery-2.1.1.min.js"></script>
-  <script src="js/github_client.js"></script>
 </body>
+</html>
