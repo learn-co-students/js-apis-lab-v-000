@@ -1,5 +1,7 @@
 # GitHub API
 
+Github token: bd3c04093f358b21cce9767b1dd48c2fcde0c59e
+
 ## Objectives
 + Use Ajax to make a `get` request to an API
 + Use Ajax to make a `post` request to an API
