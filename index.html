@@ -4,25 +4,35 @@
 </head>
 <body>
 
-<div id="container">
-  <h4>Get the gist of it</h4>
-    <form>
-      <label for="city">Token</label>
-      <input type="text" id="token"><br>
+  <div>
+    <h2>Authentication</h2>
+    <label for="token">Personal Token</label>
+    <br>
+    <input id="token" type="text" />
 
-      <label for="gist_filename">Gist file name</label>
-      <input type="text" id="gist_filename"><br>
+    <h2>Create Gist</h2>
+    <div>
+      <label for="file_name">File Name</label>
+      <br>
+      <input id="file_name" type="text" />
+    </div>
+    <div>
+      <label for="content">Content</label>
+      <br>
+      <textarea id="content"></textarea>
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <br>
+      <textarea id="description"></textarea>
+    </div>
 
-      <label for="gist_description">Gist description</label>
-      <input type="text" id="gist_description"><br>
-
-      <label for="gist_content">Gist content</label>
-      <input type="text" id="gist_content"><br>
-
-       <button id="btnGetGist" type="button">Create Gist</button>
-
-    </form>
-</div>
+    <input id="create" type="button" value="Create" />
+    <br>
+    <h2>My Gists</h2>
+    <ul id="myGists">
+    </ul>
+  </div>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>

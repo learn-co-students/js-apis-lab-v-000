@@ -1,47 +1,64 @@
 //define functions here
 
-var token = "8971378f99c3f36f5f8322ef875fa787"
+// var token = "41bd958c2dd2323c521cb315975813a9f647d760"
 
 var createGist = function(file_name, content, description, token){
+  var data = {
+    'public':   true,
+    'description': description,
+    'files': {}
+  };
+
+  data['files'][file_name] = {
+    'content': content
+  };
 
   $.ajax({
     url: 'https://api.github.com/gists',
     type: 'POST',
-    dataType: JSON.stringify({})
-    headers: {
-      Authorization: "8971378f99c3f36f5f8322ef875fa787"
-        "description": "the description for this gist",
-        "public": true,
-        "files": {
-          "file1.txt": {
-            "content": content
-            "filename": file_name
-            "description": description
-            "token": token
-        }
-      }
-    }
-  })
-
-
+    dataType: 'json',
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("Authorization", "token " + token);
+    },
+    data: JSON.stringify(data)
+  }).done(function(response) {
+    myGists(response.owner.login, token);
+  });
 };
 
-
 var myGists = function (username, token){
+  $.ajax({
+    url: 'https://api.github.com/users/' + username + '/gists',
+    type: 'GET',
+    dataType: 'jsonp'
+  }).done(function(gists) {
+    $('#myGists').html('');
 
+    $.each(gists.data, function(index, gist) {
+      var link = $('<a>')
+        .attr('href', gist.html_url)
+        .text(gist.description);
 
+      var listItem = $('<li>')
+        .append(link);
+
+      $('#myGists').append(listItem);
+    })
+  });
 };
 
 var bindCreateButton = function() {
   // call functions here
+  $('#create').click(function() {
     var token = $('#token').val();
-    var gistName = $('#filename').val();
-    var gistDesc = $('#gist_description').val()
-    var gistContent = $('#gist_content').val()
-  $('button').click(function(event){
-    createGist(gistName, gistContent, gistDesc, token);
-  })
+    var file_name = $('#file_name').val();
+    var content = $('#content').val();
+    var description = $('#description').val();
+
+    createGist(file_name, content, description, token);
+  });
 };
+
 
 $(document).ready(function(){
   bindCreateButton();
