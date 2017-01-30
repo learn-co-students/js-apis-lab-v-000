@@ -55,4 +55,8 @@ $.ajax({
 - http://api.jquery.com/jquery.ajax
 - https://developer.github.com/v3/auth/
 
+
+GIST GITHUB API TOKEN
+583bf0be081952f76c445036e80a99ca65b0ce0f
+
 <p class='util--hide'>View <a href='https://learn.co/lessons/js-apis-lab'>Github API Lab</a> on Learn.co and start learning to code for free.</p>
