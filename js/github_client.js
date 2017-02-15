@@ -1,5 +1,6 @@
 //define functions here
 var createGist = function(file_name, content, description, token){
+  
   var data = {
     public: true,
     description: description,
@@ -33,13 +34,13 @@ var myGists = function (username, token){
     headers: {
       authorization: "token" + token
     }
-  })..done(function(gists) {
+  }).done(function(gists) {
     $.each(gists, function(index, gist) {
       var html_url = gist.html_url;
       var description = gist.description;
       var html = "";
       html += "<li><a href='" + html_url + "'>" + description + "</a></li>";
-      $("#gistlist").append(html);
+      $("#my-gists").append(html);
     });
   });
 };
