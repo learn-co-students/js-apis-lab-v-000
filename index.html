@@ -3,6 +3,31 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <h2> Create a gist </h2>
+
+  <h3><label for="token">Personal Token</label></h3>
+  <input type="text" id="token">
+
+  <h3><label for="file_name">Gist File Name</label></h3>
+  <input type="text" id="file_name">
+
+  <h3><label for="description">Description</label></h3>
+  <input type="text" id="description">
+
+  <h3><label for="content">Content</label></h3>
+  <textarea id="content"> </textarea> 
+
+  <br><br>
+
+  <button id="create">Create</button>
+
+  <div id="public-gists">
+    <h2> Public Gists </h2>
+    <ul id="my-gists">
+      
+    </ul>
+  </div>
+
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
