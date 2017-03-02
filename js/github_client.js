@@ -1,35 +1,35 @@
 //define functions here
-var myToken = "5e93ddf0af09639c8daaaf95192dab822ce28d46";
+var myToken = "10dae2a8796808ff0d24829b95dd2eadc77c0dbb";
 var myUsername = "jsbenning";
 
 var createGist = function(file_name, content, description, token) {
+  var files = {};
+  files[file_name] = {"content": content};
+
   var myData = {
     "description": description, 
     "public": true, 
-    "files": {
-      file_name: {
-        "content": content
-      }
-    }
+    "files": files
   };
 
   $.ajax({
     url: 'https://api.github.com/gists',
     type: 'POST',
     dataType: 'json',
-    data: 'myData',
+    data: JSON.stringify(myData),
     headers: {
       Authorization: "token " + myToken 
     }
   }).done(function(response) {
     console.log(response);
+    myGists(response.owner.login, myToken);
   });  
 }
 
 
 var myGists = function (username, token) {
     $.ajax({
-      url: "https://api.github.com/users/jsbenning/gists", 
+      url: "https://api.github.com/users/" + username + "/gists", 
       type: 'GET', 
       dataType: 'json',
       data: 'data',
@@ -58,10 +58,8 @@ var bindCreateButton = function(event) {
   var myEnteredToken = ($('#token').val() || myToken);
   var myDescription = $('#description').val();
   var myContent = $('#content').val();
-
-  createGist(myFilename, myContent, myDescription, myEnteredToken);
-  myGists(myUsername, myToken);
   
+  createGist(myFilename, myContent, myDescription, myEnteredToken);  
 };
 
 
