@@ -1,5 +1,4 @@
 //define functions here
-var myToken = "10dae2a8796808ff0d24829b95dd2eadc77c0dbb";
 var myUsername = "jsbenning";
 
 var createGist = function(file_name, content, description, token) {
