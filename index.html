@@ -3,7 +3,22 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-
+	<div>
+		<form action="action_page.php">
+  			Token:<br>
+  			<input type="text" id="token"><br><br>
+  			File Name:<br>
+  			<input type="text" id="filename"><br><br>
+  			Description:<br>
+  			<input type="text" id="description"><br><br>
+  			Contents:<br>
+  			<input type="text" id="contents"><br><br>
+ 			<input type="submit" id="create" value="Submit">
+		</form>
+	</div>
+	<div id="list">
+		
+	</div>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
