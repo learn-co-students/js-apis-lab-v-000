@@ -40,6 +40,7 @@ describe('js-apis-lab', function() {
           }
         }
       };
+      
       spyOn(JSON, 'stringify').and.returnValue('fakeString');
 
       createGist('test_file.md', 'fake content', 'test description', 'fake token');
