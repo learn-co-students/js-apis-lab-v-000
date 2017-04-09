@@ -3,7 +3,24 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <h1>JS APIS LAB</h1>
+  <form class="form_for_gist">
+    Gist Token:
+    <br><input type="text" name="token" id="token"><br><br>
+    Gist File Name:
+    <br><input type="text" name="file_name" id="file_name"><br><br>
+    Gist Description:
+    <br><input type="text" name="description" id="description"><br><br>
+    Gist Content:
+    <br><textarea name="content" id="content" rows="8" cols="40"></textarea><br><br>
+    <input type="button" id="submit_form" name="Submit" value="Submit">
+  </form>
+  <div class="my-gists">
+    <ul id="gist-list">
 
+    </ul>
+
+  </div>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
