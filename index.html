@@ -3,7 +3,26 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <div class="container">
+    <h2>Hello</h2>
+    <div class="well col-md-6">
+      <form action="">
+        <p>Token: <input type="text" id="token" class="form-control"></p>
+        <p>File name: <input type="text" id="file_name" class="form-control"></p>
+        <p>Description: <input type="text" id="description" class="form-control"></p>
+        <p>Content: <textarea id="content" class="form-control"></textarea></p>
+        <p><button class="btn btn-info" id="create-gist">Create gist</button></p>
+      </form>
+    </div>
+    <div class="well col-md-12">
+      <h3>User' gists</h3>
+      <div id="user-info">
+        <ol>
 
+        </ol>
+      </div>
+    </div>
+  </div>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
