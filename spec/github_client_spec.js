@@ -58,7 +58,7 @@ describe('js-apis-lab', function() {
       spyOn(window, 'myGists')
 
       createGist('test_file.md', 'fake content', 'test description', 'fake token');
-
+      
       expect(window.myGists).toHaveBeenCalledWith('fake login', 'fake token');
     });
   });
