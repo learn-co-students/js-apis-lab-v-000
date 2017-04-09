@@ -1,3 +1,11 @@
 .hidden {
   display: none;
 }
+
+html {
+  font-family: helvetica;
+}
+
+input, textarea {
+  margin-bottom: 20px;
+}
