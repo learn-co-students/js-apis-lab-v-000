@@ -1,5 +1,6 @@
 # GitHub API
 
+
 ## Objectives
 + Use Ajax to make a `get` request to an API
 + Use Ajax to make a `post` request to an API
