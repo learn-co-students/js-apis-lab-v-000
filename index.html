@@ -4,6 +4,36 @@
 </head>
 <body>
 
+  <form>
+    <label for="token">Github Personal Token</label>
+    <input type="text" id="token">
+    <br>
+    
+    <label for="file-name">Gist File Name</label>
+    <input type="text" id="file-name">
+    <br>
+    
+    <label for="description">Gist Description</label>
+    <input type="text" id="description">
+    <br>
+    
+    <label for="content">Gist Content</label><br>
+    <textarea id="content"></textarea>
+    
+    <br>
+    <label for="username">Github Username</label>
+    <input type="text" id="username">
+    
+    <input type="submit" value="Submit" id="submit">
+  </form>
+  
+  <h3>Your Gists:</h3>
+  <div id="user-gists">
+    <ul>
+      
+    </ul>
+  </div>
+
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
 </body>
