@@ -3,7 +3,35 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-
+  <div>
+    <h2>Create Gist</h2>
+    <div>
+      <label for="token">Token: </label>
+      <input id="token" type="text" />
+    </div>
+    <br>
+    <div>
+      <label for="file_name">File Name: </label>
+      <input id="file_name" type="text" />
+    </div>
+    <br>
+    <div>
+      <label for="content">Content: </label>
+      <input id="content" type="text" />
+    </div>
+    <br>
+    <div>
+      <label for="description">Description: </label>
+      <input id="description" type="text" />
+    </div>
+    <br>
+    <input id="create" type="button" value="Create" />
+    <br>
+    <h2>My Gists</h2>
+    <ul id="myGists">
+    </ul>
+  </div>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
+
 </body>
