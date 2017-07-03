@@ -3,6 +3,19 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <div id="error"></div>
+  <ul id="list"></ul>
+  <form action="action_page.php">
+    Personal Token:<br>
+    <input type="text" name="token" id='token' placeholder="enter token"><br>
+    File Name:<br>
+    <input type="text" name="file_name" id='filename' placeholder="enter file name"><br>
+    Description of file:<br>
+    <input type="text" name="description" id="description" placeholder="enter description"><br>
+    Content:<br>
+    <input type="text" name="content" id="content" placeholder="content"><br><br>
+    <input type="submit" value="Create" id="create">
+  </form>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
