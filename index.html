@@ -3,6 +3,29 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <h1>Create New Gist</h1>
+  <form action="">
+    <p>
+      Token: <input type="text" id="token">
+    </p>
+    <p>
+      File name: <input type="text" id="file_name">
+    </p>
+    <p>
+      Description: <input type="text" id="description">
+    </p>
+    <p>
+      Content:<textarea id="content" rows="8" cols="40"></textarea>
+    </p>
+    <p>
+      <button type="button" id="create">Create Gist</button>
+    </p>
+  </form>
+
+  <ol id="myGists">
+
+  </ol>
+
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
