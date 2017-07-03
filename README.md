@@ -9,6 +9,7 @@
 For this lab we will be using the GitHub API to create and view Gists. In this lab you will create a UI that allows users to see a list of their gists and be able to create new ones.
 
 ## Instructions
+var token = 'ecb4552041e3e2b51dcbf71155edf2c0c5d911b7'
 You will need to visit [Github Tokens](https://github.com/settings/tokens) and create a personal token to use. This token allows you to request data for your account. Make sure you select "gists" from the checkboxes to allow your token to have access to that part of the Github API. Also, before you begin, visit [list a gist guide](https://developer.github.com/v3/gists/#list-a-users-gists) and [create a gist guide](https://developer.github.com/v3/gists/#create-a-gist) and review how to use the gist portion of the GitHub API.
 
 - Create the method `myGists(username, token)` that returns the gists for a user.
