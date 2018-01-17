@@ -1,8 +1,26 @@
+
 <!doctype html>
 <head>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+  <div>
+    <h4>Create Your Gist</h4>
+    <form id="createGist">
+      <input id="username" type="text" placeholder="Github Username"/><br />
+      <input id="token" type="password" placeholder="Github Token"/><br />
+      <input id="file_name" type="text" placeholder="File Name"/><br />
+      <input id="description" type="text" placeholder="Description"/><br />
+      <textarea id="content" type="text" placeholder="Code Content"></textarea><br />
+      <input type="submit" name="submit" value="Create"/>
+    </form>
+  </div>
+
+  <div class="myGists">
+    <ol class="myGists">
+    </ol>
+
+  </div>
 
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/github_client.js"></script>
