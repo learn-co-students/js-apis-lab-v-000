@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="3" errors="0" failures="1" time="0.033" timestamp="2016-03-12T19:12:45">
+		<testcase classname="js-apis-lab" name="calling createGist calls the github api with a post" time="0.003">
+		</testcase>
+		<testcase classname="js-apis-lab" name="calling createGist sends the correct data" time="0.002">
+			<failure type="toEqual" message="Expected { description : &amp;apos;test description&amp;apos;, public : true, files : { file_name : { content : &amp;apos;fake content&amp;apos; } } } to equal { public : true, description : &amp;apos;test description&amp;apos;, files : { test_file.md : { content : &amp;apos;fake content&amp;apos; } } }.">
+stack@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1293:37
+buildExpectationResult@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1270:19
+expectationResultFactory@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:484:40
+addExpectationResult@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:260:70
+addExpectationResult@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:442:41
+file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1209:32
+file:///home/nitrous/code/labs/js-apis-lab-v-000/spec/github_client_spec.js:48:57
+attemptSync@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1510:16
+run@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1498:20
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1485:13
+queueRunnerFactory@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:518:42
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:306:28
+file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1708:44
+attemptAsync@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1520:16
+run@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1496:28
+next@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1517:40
+complete@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:333:19
+clearStack@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:506:11
+run@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1505:22
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1485:13
+queueRunnerFactory@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:518:42
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:306:28
+file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1708:44
+attemptAsync@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1520:16
+run@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1496:28
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1485:13
+queueRunnerFactory@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:518:42
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1694:21
+file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1708:44
+attemptAsync@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1520:16
+run@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1496:28
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1485:13
+queueRunnerFactory@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:518:42
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1694:21
+file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1708:44
+attemptAsync@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1520:16
+run@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1496:28
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1485:13
+queueRunnerFactory@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:518:42
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1694:21
+file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:541:83
+attemptAsync@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1520:16
+run@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1496:28
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1485:13
+queueRunnerFactory@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:518:42
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:548:25
+onload@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/boot.js:172:16			</failure>
+		</testcase>
+		<testcase classname="js-apis-lab" name="calling createGist calls done" time="0.001">
+		</testcase>
+	</testsuite>
+</testsuites>
+
